@@ -20,6 +20,7 @@
 | Cons           | Too simple for most interesting things                 | Need to understand SEXP & R internals                        |                                                              |
 | Cons           | Performs copying of data to call functions             |                                                              |                                                              |
 | Demo R package | [{simplec}](https://github.com/coolbutuseless/simplec) | [{simplecall}](https://github.com/coolbutuseless/simplecall) | [{simplercpp}](https://github.com/coolbutuseless/simplercpp) |
+| Compiled size  | 17 kB                                                  | 17 kB                                                        | 92 kB                                                        |
 
 ## Installation
 
@@ -95,7 +96,7 @@ simplercpp:::`_simplercpp_add_rcpp`
 #> [1] "_simplercpp_add_rcpp"
 #> 
 #> $address
-#> <pointer: 0x7fdcdf5b1f50>
+#> <pointer: 0x7f93bd45f190>
 #> attr(,"class")
 #> [1] "RegisteredNativeSymbol"
 #> 
