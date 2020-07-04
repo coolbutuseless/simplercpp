@@ -10,17 +10,40 @@
 
 `simplercpp` is a small demo package incorporating C++ code via `Rcpp`
 
-## Rough comparison of `.C()`, `.Call()` and `{Rcpp}`
+This is one of a series of small demo packages for  
+calling other languages from R:
 
-|                | .C()                                                   | .Call()                                                      | Rcpp                                                         |
-| -------------- | ------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Overview       | No real understanding of R objects                     | Need to understand SEXP macros & internals                   | C++ classes hide the complexity of the SEXP internals        |
-| What code?     | Basic C code. Numeric calcs.                           | Complex C code. Can manipulate R objects from C              | Complex C and C++ code involving numerics and R objects      |
-| Pros           | Simple to understand and use                           | Simple. No unnecessary copying.                              | Great documentation. Wrapping of R objects very intuitive.   |
-| Cons           | Too simple for most interesting things                 | Need to understand SEXP & R internals                        |                                                              |
-| Cons           | Performs copying of data to call functions             |                                                              |                                                              |
-| Demo R package | [{simplec}](https://github.com/coolbutuseless/simplec) | [{simplecall}](https://github.com/coolbutuseless/simplecall) | [{simplercpp}](https://github.com/coolbutuseless/simplercpp) |
-| Compiled size  | 17 kB                                                  | 17 kB                                                        | 92 kB                                                        |
+  - [{simplec}](https://github.com/coolbutuseless/simplec) - calling C
+    with `.C()`
+  - [{simplecall}](https://github.com/coolbutuseless/simplecall) -
+    calling C with `.Call()`
+  - [{simplercpp}](https://github.com/coolbutuseless/simplercpp) -
+    calling C++ with `{Rcpp}`
+  - [{simplefortran}](https://github.com/coolbutuseless/simplefortran) -
+    calling Fortran with `.Fortran()`
+
+## Rough comparison of `.C()`, `.Call()`, `{Rcpp}` (and `.Fortran()`)
+
+|                | .C()                                                   | .Call()                                                      | Rcpp                                                                                                       |
+| -------------- | ------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| Overview       | No real understanding of R objects                     | Need to understand SEXP macros & internals                   | C++ classes hide the complexity of the SEXP internals                                                      |
+| What code?     | Basic C code. Numeric calcs.                           | Complex C code. Can manipulate R objects from C              | Complex C and C++ code involving numerics and R objects                                                    |
+| Pros           | Simple to understand and use                           | Simple. No unnecessary copying.                              | Great documentation. Wrapping of R objects very intuitive.                                                 |
+| Cons           | Too simple for most interesting things                 | Need to understand SEXP & R internals                        |                                                                                                            |
+| Cons           | Performs copying of data to call functions             |                                                              |                                                                                                            |
+| Demo R package | [{simplec}](https://github.com/coolbutuseless/simplec) | [{simplecall}](https://github.com/coolbutuseless/simplecall) | [{simplercpp}](https://github.com/coolbutuseless/simplercpp)                                               |
+| Compiled size  | 17 kB                                                  | 17 kB                                                        | 92 kB (stripping can bring this down: see [issue1](https://github.com/coolbutuseless/simplercpp/issues/1)) |
+
+|                | .Fortran()                                                         |
+| -------------- | ------------------------------------------------------------------ |
+| Overview       | No real understanding of R objects                                 |
+| What code?     | Basic Fortran code. Numeric calcs.                                 |
+| Pros           | Simple to understand and use                                       |
+| Cons           | Too simple for most interesting things                             |
+| Cons           | Performs copying of data to call functions                         |
+| Cons           | Need to know Fortran\!                                             |
+| Demo R package | [{simplefortran}](https://github.com/coolbutuseless/simplefortran) |
+| Compiled size  | 17 kB                                                              |
 
 ## Installation
 
@@ -96,7 +119,7 @@ simplercpp:::`_simplercpp_add_rcpp`
 #> [1] "_simplercpp_add_rcpp"
 #> 
 #> $address
-#> <pointer: 0x7f93bd45f190>
+#> <pointer: 0x7f912ed2c220>
 #> attr(,"class")
 #> [1] "RegisteredNativeSymbol"
 #> 
