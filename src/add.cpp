@@ -7,7 +7,7 @@ using namespace Rcpp;
 //' @param x,y numeric vectors
 //'
 //' @return numeric vector
-//'
+//' @export
 // [[Rcpp::export]]
 NumericVector add_rcpp(NumericVector x, NumericVector y) {
   return(x + y);
@@ -20,7 +20,7 @@ NumericVector add_rcpp(NumericVector x, NumericVector y) {
 //' @param x,y numeric vectors
 //'
 //' @return numeric vector
-//'
+//' @export
 // [[Rcpp::export]]
 NumericVector mul_rcpp(NumericVector x, NumericVector y) {
   return(x * y);

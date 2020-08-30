@@ -6,7 +6,7 @@
 #' @param x,y numeric vectors
 #'
 #' @return numeric vector
-#'
+#' @export
 add_rcpp <- function(x, y) {
     .Call(`_simplercpp_add_rcpp`, x, y)
 }
@@ -16,7 +16,7 @@ add_rcpp <- function(x, y) {
 #' @param x,y numeric vectors
 #'
 #' @return numeric vector
-#'
+#' @export
 mul_rcpp <- function(x, y) {
     .Call(`_simplercpp_mul_rcpp`, x, y)
 }
